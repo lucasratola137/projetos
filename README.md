@@ -56,3 +56,29 @@ As regras de negócio foram definidas da seguinte forma:
 - Ouro: clientes com maior pontuação de gastos considerando a renda anual e idade.
 
 Essas definições serviram como base para validar os resultados do modelo de clusterização, garantindo que os grupos gerados fizessem sentido do ponto de vista do negócio.
+
+### 2. Leitura, Preparação e Segmentação dos Dados
+Após a definição das regras de negócio, iniciei a etapa técnica com a leitura da base de clientes em formato CSV utilizando Python.
+
+Em seguida, foi realizada uma análise estatística básica das três variáveis utilizadas no modelo:
+- idade
+- renda_anual
+- pontuacao_gastos
+
+Isso permitiu entender a distribuição dos dados, possíveis outliers e diferenças de escala entre as variáveis.
+
+### 3. Padronização dos Dados
+Como as variáveis possuem escalas muito diferentes (por exemplo, renda anual vs. pontuação de gastos), foi necessário aplicar padronização (z-score) antes da clusterização.
+
+Essa etapa garante que nenhuma variável tenha mais peso que outra apenas por estar em uma escala maior.
+ 
+Também foi feita uma comparação visual entre os valores originais e os padronizados para validar o processo.
+
+### 4. Clusterização com K-Means
+Com os dados padronizados, foi aplicado o algoritmo K-Means, definindo k = 3 clusters, de acordo com a regra de negócio (Bronze, Prata e Ouro).
+
+Cada cliente passou a receber um identificador numérico de cluster (0, 1 ou 2).
+O botão abaixo te redicionará ao código em Python.
+<div align="center">
+<br><a href="https://github.com/lucasratola137/Clusterizacao_Python/blob/main/Clusterizacao.py">Acessar o código no GitHub → </a> <br />
+</div>
