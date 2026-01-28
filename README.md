@@ -170,6 +170,7 @@ Diante disso, a pergunta que responderemos a seguir é:
 - Cupons progressivos
 - Ofertas por bundle
 - Comunicação focada em benefícios, não em preço
+
 Observação: Eles não gastam pouco porque não podem. Eles gastam pouco porque não foram ativados.
 
 **Segmento Bronze - O Começo do Ciclo de Vida**
@@ -190,6 +191,7 @@ Observação: Eles não gastam pouco porque não podem. Eles gastam pouco porque
 - Programas de pontos
 - Promoções de baixo risco
 - Frete grátis, combos, etc.
+
 Importante: Não tentar monetizar forte agora, mas sim construir relacionamento.
 
 ## 📈 Estratégia de Crescimento Baseada em Dados
