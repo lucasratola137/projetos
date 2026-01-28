@@ -38,17 +38,17 @@
 
 ## 🔗 Etapas de Construção do Projeto
 
-<p>O projeto foi estruturado em camadas sequenciais listadas abaixo.</p>
+<p>O projeto foi estruturado em camadas sequenciais listadas abaixo, sendo a última o diagnóstico preciso relacionada aos dados e a segmentação dos clientes de uma loja de varejo de médio porte.</p>
 
 ### 1. Regras de Negócio
 A primeira fase do projeto consistiu em definir com clareza qual problema seria resolvido e qual resultado era esperado. Essa etapa é fundamental e, sempre que possível, deve ser feita em conjunto com o usuário final, pois é ele quem conhece o contexto real do negócio.
 
-Neste caso, o objetivo era ajudar o dono da loja a entender quais estratégias de venda aplicar para cada tipo de cliente. Para isso, ele disponibilizou três informações da base:
+Neste caso, o objetivo era ajudar o CEO da loja a entender quais estratégias de venda aplicar para cada tipo de cliente. Para isso, ele disponibilizou três informações da base:
 - Idade
 - Renda anual
 - Pontuação de gastos na loja (variando de 0 a 100)
 
-A necessidade principal era segmentar os clientes em três perfis: Bronze, Prata e Ouro, de forma que cada grupo pudesse receber abordagens diferentes.
+A necessidade principal era segmentar os clientes de uma loja em três perfis: Bronze, Prata e Ouro, de forma que cada grupo pudesse receber abordagens diferentes.
 
 As regras de negócio foram definidas da seguinte forma:
 - Bronze: clientes com menor pontuação de gastos considerando a renda anual e idade.
@@ -99,6 +99,138 @@ Após a segmentação, o dataset foi salvo em um novo arquivo. Esse arquivo foi 
 </div>
 
 ### 6. Conexão Fonte de Dados e Criação do Dashboard
-Por fim, nesta etapa foi realizada a conexão entre o Google Cloud e Looker Studio para criação do Dashboard com os gráficos para análise do usuário final.
+Nesta etapa foi realizada a conexão entre o Google Cloud e Looker Studio para criação do Dashboard com os gráficos para análise do usuário final.
 
 Observação: Optei pelo Looker Studio pela facilidade em compartilhar, porém a conexão entre Power BI e Google Cloud é bem simples de realizar também.
+
+### 7. Diagnóstico
+Por fim, seguimos para a última etapa. 
+
+Após todo o trabalho de entendimento da regra de negócio e o trabalho técnico, vem uma das partes mais importantes de um Analista de Dados: O Diagnóstico dos Dados.
+
+A clusterização separou por comportamento de consumo, podemos resumir esse comportamento montando a tabela abaixo:
+
+
+| Cluster    | Idade | Renda         | Gasto          | Perfil real                    |
+| ---------- | ----- | ------------- | -------------- | ------------------------------ |
+| **Ouro**   | ~42   | Média         | **Muito alto** | Clientes engajados             |
+| **Prata**  | ~60   | **Mais alta** | Médio          | Clientes ricos, pouco ativados |
+| **Bronze** | ~31   | Alta          | Baixo          | Clientes jovens, pouco maduros |
+
+
+A loja hoje tem:
+- Pessoas que podem gastar mais (Prata)
+- Pessoas que vão gastar mais no futuro (Bronze)
+- Pessoas que já são o motor da receita (Ouro)
+
+O problema em si da loja não é de aquisição e sim de ativação e conversão de valor. 
+
+Diante disso, a pergunta que responderemos a seguir é: 
+<div align="center">
+<h3>
+"O que fazer com cada grupo de cliente?"
+  </h3>
+</div>
+
+
+
+**Segmento Ouro - Financiam o Negócio**
+
+→ Provaram que:
+- Têm renda aproximadamente igual a média anual geral
+- Têm hábito
+- Têm engajamento
+
+
+→ Objetivo:
+- Não perder + aumentar ticket e recorrência
+
+
+→ Estratégias:
+- Programa de fidelidade VIP
+- Acesso antecipado a promoções
+- Cashback
+- Produtos premium
+
+
+**Segmento Prata - Potencial de Receita Travado**
+
+→ Provaram que:
+- Ganham mais que os clientes Ouro, mas gastam bem menos
+- São mais velhos
+- Estão subutilizados
+
+
+→ Objetivo:
+- Converter poder aquisitivo em consumo
+
+
+→ Estratégias:
+- Campanhas peronalizadas
+- Cupons progressivos
+- Ofertas por bundle
+- Comunicação focada em benefícios, não em preço
+Observação: Eles não gastam pouco porque não podem. Eles gastam pouco porque não foram ativados.
+
+**Segmento Bronze - O Começo do Ciclo de Vida**
+
+→ São:
+- Jovens
+- Renda alta (acima da média geral)
+- Gastam pouco
+
+
+→ Objetivo:
+- Criar hábito de consumo
+
+
+→ Estratégias
+- Descontos de entrada
+- Gamificação
+- Programas de pontos
+- Promoções de baixo risco
+- Frete grátis, combos, etc.
+Importante: Não tentar monetizar forte agora, mas sim construir relacionamento.
+
+## 📈 Estratégia de Crescimento Baseada em Dados
+
+Com a segmentação definida, é possível estruturar uma estratégia clara de crescimento orientada por dados. O funil real do negócio passa a ser:
+
+<div align="center"> <b>Bronze → Prata → Ouro</b> </div>
+
+
+Cada cliente percorre naturalmente esse ciclo ao longo do tempo, e o papel da empresa é acelerar esse movimento, aumentando o valor capturado ao longo da vida do cliente (Customer Lifetime Value).
+
+A partir disso, surgem três KPIs que passam a orientar as decisões da empresa:
+- Taxa de conversão de clientes Bronze para Prata
+- Taxa de conversão de clientes Prata para Ouro
+- Receita média por cliente em cada cluster
+
+Esses indicadores permitem responder perguntas como:
+- A empresa está conseguindo transformar novos clientes em clientes rentáveis?
+- Quais campanhas realmente fazem clientes evoluírem de categoria?
+- Onde está o maior potencial de crescimento de receita?
+
+## 💰 Onde está o maior potencial financeiro
+
+Embora o cluster Ouro seja o principal gerador de receita atual, os dados mostram que o maior potencial de crescimento está no cluster Prata.
+
+Esse grupo possui:
+- A maior renda média anual
+- Um volume relevante de clientes
+- Um nível de gasto abaixo do seu real potencial
+
+Portanto, o melhor retorno sobre investimento (ROI) não está em tentar vender mais para quem já compra muito, mas sim em converter clientes Prata em clientes Ouro.
+
+Cada ponto percentual de conversão nesse grupo representa aumento direto de receita, sem custo de aquisição de novos clientes.
+
+## 🧠 Conclusão
+
+Este projeto demonstra como técnicas de Machine Learning, combinadas com engenharia de dados e visualização, podem gerar insights acionáveis de negócio.
+
+A clusterização não foi utilizada apenas como exercício técnico, mas como uma ferramenta para:
+- Entender o comportamento dos clientes
+- Identificar gargalos de receita
+- Direcionar estratégias de marketing, fidelização e crescimento
+
+O resultado final é um modelo de segmentação que permite à empresa sair de decisões genéricas e passar a operar de forma **data-driven**, tratando cada grupo de clientes de acordo com seu valor, potencial e estágio de maturidade no ciclo de consumo.
