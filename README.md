@@ -14,7 +14,7 @@
     
 <div align="center">
 
-<p>Este README detalha o processo completo de análise de um dataset, desde a limpeza e engenharia de dados em SQL no Google Big Query, passando pela criação de um modelo Machine Learning em Python, até a construção de um dashboard no Looker Studio.</p>
+<p>Este README detalha o processo completo de análise de um dataset, desde a limpeza e engenharia de dados em SQL no Google Big Query, passando pela criação de um modelo Machine Learning em Python, até a construção de um dashboard no Looker Studio e um diagnóstico final baseado na análise dos dados.</p>
 
 </div>
 
