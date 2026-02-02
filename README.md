@@ -32,7 +32,7 @@
 <p>Este projeto simula um caso de uso real do dia a dia de um profissional de dados, com o objetivo de analisar os clientes e realizar a segmentação em 3 níveis para identificação. O processo abrange três grandes áreas:</p>
 <ol>
   <li><strong>Engenharia de Dados:</strong> Tratamento, limpeza e enriquecimento dos dados brutos utilizando SQL e Google Cloud Plataform (GCP) para prepará-los para análise e modelagem.</li>
-  <li><strong>Machine Learning:</strong> Desenvolvimento de um modelo de clusterização utilizando Python e Scikit-learn.</li>
+  <li><strong>Machine Learning:</strong> Desenvolvimento de um modelo de clusterização baseado em aprendizado não supervisionado, utilizando Python e Scikit-learn.</li>
   <li><strong>Business Intelligence:</strong> Criação de um dashboard dinâmico no Looker Studio para visualizar os insights e permitir a exploração interativa dos dados.</li>
 </ol>
 
